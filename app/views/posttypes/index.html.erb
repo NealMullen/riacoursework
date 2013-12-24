@@ -1,0 +1,27 @@
+<h1>Listing posttypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posttypes.each do |posttype| %>
+      <tr>
+        <td><%= posttype.name %></td>
+        <td><%= link_to 'Show', posttype %></td>
+        <td><%= link_to 'Edit', edit_posttype_path(posttype) %></td>
+        <td><%= link_to 'Destroy', posttype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Posttype', new_posttype_path %>

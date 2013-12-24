@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Riacoursework</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,300,400,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<header role="banner" class="overflow">
+  <div class="container">
+    <ul id="toparea" class="unlist overflow">
+    	<li id="logo" class="left"><a href="/" title="Back home"><%= image_tag "logo.png" %></a></li>
+    	<li id="login" class="right"><%=  link_to_modal "Login", "#login-modal" %></li>
+    </ul>
+		<% if @show_navbar -%>
+    <div id="intro">
+		  <h1>An online marketplace for students</h1>
+		  <p class="sub">Buy or sell from other students and get ready for college or Uni</p>
+			<%=  link_to_modal "Register", "#demo-form", :class=>"button" %>
+		</div><% end -%>
+    
+
+
+  </div>
+</header>
+<section id="search-area" class="grey">
+  <div class="container inner">
+<%= form_tag posts_path, :method => 'get', :id => "posts_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search], :placeholder => "Search Posts.... e.g. Textbooks", :type =>"search"  %>
+    <%= submit_tag "Search", :name => nil, :id =>"search-btn" %>
+  </p>
+
+<% end %>
+  </div>
+</section>  
+<%= yield %>
+<section class="dark">
+  <div class="container inner overflow">
+    <header>
+      <h2>How it works</h2>
+    </header>
+    <ul id="how-it-works" class="unlist numbered">
+      <li>
+        <div class="heading"><span class="one"></span>Sign up with your School email</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </li>
+
+      <li>
+        <div class="heading"><span class="two"></span>Search and post items</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </li>
+
+      <li>
+        <div class="heading"><span class="three"></span>Give me an A for this project</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </li>
+    </ul>
+
+      <a class="button white right">More info</a>
+      <a class="button right">More info</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container overflow">
+    <ul class="unlist">
+      <li>Home<li>
+      <li>About</li>
+      <li>Posts</li>
+      <li class="last">Terms of Service</li>
+      <li class="right">Project by Neal Mullen</li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
