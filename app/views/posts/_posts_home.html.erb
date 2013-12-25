@@ -1,0 +1,20 @@
+<header><%
+if(params[:search]) and (params[:search].present?)%>
+<h1><span><%=@posts.total_entries%></span> Results found for '<%=params[:search]%>'</h1>
+<% else %>
+<h1>Latest Posts</h1>
+<% end %></header>
+
+
+<% @posts.each do |post| %>
+  <article class="post">
+    <div class="line"></div>
+    <header>
+      <h3><%= post.title %></h3>
+      <p class="price">&pound;<%= post.price %></p>
+    </header>
+    <small><%= post.posttype.name %> | <a href=""><%= post.category.name %></a> | Negotiable Price</small>
+    <p><%= post.description[0,360] +'...' %></p>
+    <%= link_to 'More info', post, :class => "button right" %>
+  </article>
+<% end %>

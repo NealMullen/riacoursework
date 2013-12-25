@@ -1,0 +1,8 @@
+$("#posts").html("<%= escape_javascript(render('posts')) %>");
+
+//$('#posts').append('<%= escape_javascript(render("posts")) %>');
+//$('a.load-more-posts').attr('href', '<%=posts_path page: @posts.next_page %>');
+
+//<% unless @posts.next_page %>
+//  $('a.load-more-posts').remove();
+//<% end %>

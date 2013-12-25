@@ -13,3 +13,42 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+
+if (history && history.pushState) {
+
+  $(function() {
+
+$(document).on("click",".pagination a", function() {
+
+$.getScript(this.href);
+history.pushState(null, document.title, this.href);
+ return false;
+ 
+
+});
+
+    $("#posts_search").submit(function() {
+
+     // $('html, body').animate({
+
+       // scrollTop: $("#posts").offset().top
+   // }, 640);
+$("#intro").slideUp(300);
+      $.get($("#posts_search").attr("action"), $("#posts_search").serialize(), null, "script");
+      history.pushState(null, document.title, $("#posts_search").attr("action") + "?" + $("#posts_search").serialize());
+      
+       return false;
+
+
+    });
+    $(window).bind("popstate", function() {
+      $.getScript(location.href);
+    });
+
+
+
+  });
+
+}
+
