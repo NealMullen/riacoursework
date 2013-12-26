@@ -54,6 +54,13 @@ $(function() {
     return false;
   });
 
+
+ $(document).on("click","a.back", function() {
+    $.getScript(this.href);
+    history.pushState(null, document.title, this.href);
+    return false;
+  });
+
   $("#posts_search").submit(function() {
     $("#intro").slideUp(300);
     $('input').blur();

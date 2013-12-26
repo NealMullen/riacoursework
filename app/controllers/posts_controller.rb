@@ -9,9 +9,15 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-       @posts = Post.search(params[:search]).paginate(:per_page => 4,:page => params[:page])
-       session[:page] = params[:page]
-       session[:search] = params[:search]
+    @posts = Post.search(params[:search]).paginate(:per_page => 4,:page => params[:page])
+    session[:page] = params[:page]
+
+    if(params[:search]) and (params[:search].present?)
+      session[:search] = params[:search]
+     else
+      session.delete(:search)
+    end
+    
   end
 
   # GET /posts/1
