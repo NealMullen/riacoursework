@@ -8,7 +8,7 @@ if(params[:search]) and (params[:search].present?)%>
 <%
 if(@posts.total_entries<1)%>
 <p>It seems that we can find anything relating to your search critera. Why don't you try some of our most popular searches?</p>
-<a class="button right" href="/posts">View all post</a>
+<a class="button right" href="/posts" id="all-posts">View all post</a>
 <% else %>
 <% @posts.each do |post| %>
   <article class="post">
@@ -19,7 +19,7 @@ if(@posts.total_entries<1)%>
     </header>
     <small><%= post.posttype.name %> | <a href=""><%= post.category.name %></a> | Negotiable Price</small>
     <p><%= post.description[0,360] +'...' %></p>
-    <%= link_to 'More info', post, :class => "button right" %>
+    <%= link_to 'More info', post, :class => "button right view-post" %>
   </article>
 <% end %>
 <%= will_paginate @posts %>
