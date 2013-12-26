@@ -12,10 +12,29 @@
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </head>
 <body>
+
+  <div id="login-modal" class="my_modal form-popup demo-description" style="display: none; ">
+    <header>
+      <h2>Login</h2>
+    </header>
+    <form id="login-form">
+      <div class="row">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email"/>
+      </div>
+      <div class="row">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password"/>
+         <a href="" title="">Forgot your password?</a>
+          <input type="submit" id="submit" class="button right" value="Login"/>
+      </div>
+    </form>
+  </div>
+  
 <header role="banner" class="overflow">
   <div class="container">
     <ul id="toparea" class="unlist overflow">
-    	<li id="logo" class="left"><a href="/" title="Back home"><%= image_tag "logo.png" %></a></li>
+    	<li id="logo" class="left"><%= link_to image_tag("logo.png"), root_path, :title =>"Go back home" %></li>
     	<li id="login" class="right"><%=  link_to_modal "Login", "#login-modal" %></li>
     </ul>
 		<% if @show_navbar -%>
@@ -40,7 +59,10 @@
 <% end %>
   </div>
 </section>  
+<div id="main">
+
 <%= yield %>
+</div>
 <section class="dark">
   <div class="container inner overflow">
     <header>
@@ -71,11 +93,11 @@
 <footer>
   <div class="container overflow">
     <ul class="unlist">
-      <li>Home<li>
-      <li>About</li>
-      <li>Posts</li>
-      <li class="last">Terms of Service</li>
-      <li class="right">Project by Neal Mullen</li>
+      <li><%= link_to "Home", root_path, :title =>"Go back home" %><li>
+      <li><%= link_to "About", about_path, :title =>"About this website" %></li>
+      <li><%= link_to "Posts", posts_path, :title =>"View all posts" %></li>
+      <li class="last"><%= link_to "Terms", terms_path, :title =>"Read our terms" %></li>
+      <li class="right"><a href="https://twitter.com/neal_mullen" title="Follow Neal Mullen">Project by Neal Mullen</a></li>
     </ul>
   </div>
 </footer>

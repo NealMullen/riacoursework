@@ -2,16 +2,27 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
    before_action :prepare_categories
   before_action :prepare_posttypes
+
+
+
+
   # GET /posts
   # GET /posts.json
   def index
        @posts = Post.search(params[:search]).paginate(:per_page => 4,:page => params[:page])
-
+       session[:page] = params[:page]
+       session[:search] = params[:search]
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+     @post = Post.find(params[:id])
+  @posts=Post.all # needed for sidebar, probably better to use a cell for this
+  respond_to do |format|
+    format.html # show.html.erb
+    format.js # show.js.erb
+  end
   end
 
   # GET /posts/new
@@ -81,4 +92,6 @@ class PostsController < ApplicationController
     def prepare_posttypes
       @posttypes = Posttype.all
     end
+
+
 end

@@ -1,0 +1,18 @@
+<section id="posts" class="container inner overflow main">
+
+	<p id="notice"><%= notice %></p>
+
+ <article class="post">
+    <div class="line"></div>
+    <header>
+      <h3><%= @post.title %></h3>
+      <p class="price">&pound;<%= @post.price %></p>
+    </header>
+    <small><%= @post.posttype.name %> | <a href=""><%= @post.category.name %></a> | Negotiable Price</small>
+    <p><%= @post.description %></p>
+    <p><%= @post.description %></p>
+    <p><%= @post.description %></p>
+  </article>
+
+   <%= link_to "Back to search results", posts_path(:search => session[:search],:page => session[:page]), :title =>"Back to results" %>
+</section>

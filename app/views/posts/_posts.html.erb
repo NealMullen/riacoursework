@@ -19,7 +19,7 @@ if(@posts.total_entries<1)%>
     </header>
     <small><%= post.posttype.name %> | <a href=""><%= post.category.name %></a> | Negotiable Price</small>
     <p><%= post.description[0,360] +'...' %></p>
-    <%= link_to 'More info', post, :class => "button right view-post" %>
+    <%= link_to 'More info', post, :class => "button right view-post", :remote => true %>
   </article>
 <% end %>
 <%= will_paginate @posts %>

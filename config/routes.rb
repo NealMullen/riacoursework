@@ -5,8 +5,8 @@ Riacoursework::Application.routes.draw do
   resources :categories
 
   resources :posts
-
-  match '/', to: 'statics#home', via: 'get'
+  root 'statics#home'
+  #match '/', to: 'statics#home', via: 'get'
   match '/about',    to: 'statics#about',    via: 'get'
   match '/terms',   to: 'statics#terms',   via: 'get'
   
