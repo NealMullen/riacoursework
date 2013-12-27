@@ -432,3 +432,6 @@ input[type='submit']{
   text-transform:uppercase;
 }
 
+.owl-carousel{
+  @include padtr(2,0);
+}

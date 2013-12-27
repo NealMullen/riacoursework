@@ -5,9 +5,12 @@ class Post < ActiveRecord::Base
 
 	def self.search(search)
 	  if search
-	   joins(:category).where('title LIKE ? OR categories.name LIKE ?', "%#{search}%","%#{search}%")
+	  joins(:category).where('title LIKE ? OR categories.name LIKE ?', "%#{search}%","%#{search}%")
+
 	  else
 	    scoped
 	  end
 	end
+
+
 end
