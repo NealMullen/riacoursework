@@ -1,7 +1,12 @@
 $green: #31ad60;
 $blue: #1e2a38;
 $grey: #efefef;
-
+.ui-autocomplete-category {
+    font-weight: bold;
+    padding: .2em .4em;
+    margin: .2em 0 .2em;
+    line-height: 1.5;
+  }
 @mixin font-size($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
@@ -184,6 +189,7 @@ footer{
   padding:30px 0;
   border-top:1px solid #273647;
   color:#717580;
+  a{color:#717580; text-decoration:none}
   ul li{
     float:left;
     margin-right: 14px;
@@ -425,3 +431,4 @@ input[type='submit']{
   @include font-size(2);
   text-transform:uppercase;
 }
+

@@ -13,8 +13,8 @@ if(params[:search]) and (params[:search].present?)%>
       <h3><%= post.title %></h3>
       <p class="price">&pound;<%= post.price %></p>
     </header>
-    <small><%= post.posttype.name %> | <a href=""><%= post.category.name %></a> | Negotiable Price</small>
+    <small><%= post.posttype.name %> | <%= link_to post.category.name, posts_path(:search => post.category.name), :class => "ajax-this-bitch", :remote => true%> | Negotiable Price</small>
     <p><%= post.description[0,360] +'...' %></p>
-    <%= link_to 'More info', post, :class => "button right" %>
+    <%= link_to 'More info', post, :class => "button right ajax-this-bitch", :remote => true %>
   </article>
 <% end %>
