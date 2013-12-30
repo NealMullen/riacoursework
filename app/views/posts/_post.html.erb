@@ -55,8 +55,12 @@
                   <img src="http://owlgraphic.com/owlcarousel/assets/img/demo-slides/tons.png" alt="Tons of Opotions">
                 </div>
 </div>
+<div class="right tools">
+   <%= link_to "Back to results", posts_path(:search => session[:search],:page => session[:page]), :title =>"Back to results", :remote => true, :class =>"button ajax-this-bitch blue" %>
+       <%= link_to "Enquiry", posts_path(:search => session[:search],:page => session[:page]), :title =>"Back to results", :remote => true, :class =>"button ajax-this-bitch" %>
+        <%= link_to "Watch", posts_path(:search => session[:search],:page => session[:page]), :title =>"8 Watching", :remote => true, :class =>"button ajax-this-bitch tooltip" %>
 
-       <%= link_to "Back to search results", posts_path(:search => session[:search],:page => session[:page]), :title =>"Back to results", :remote => true, :class =>"button right ajax-this-bitch" %>
+</div>
 
 
   </article>
