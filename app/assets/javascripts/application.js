@@ -3,6 +3,7 @@
 //= require jquery.modal
 //= require_tree .
 /*
+
 $(function() {
     var availableTags = [
       "ActionScript",
@@ -38,6 +39,7 @@ $(function() {
   });
 
 */
+
 
  $(function() {
 
@@ -112,11 +114,16 @@ $(function() {
 
 
   $("#posts_search").submit(function() {
+    $("#posts").html('<img src="http://www.learnalanguage.com/courses/core/img/loading.gif.pagespeed.ce.VR3_8ncS6r.gif" style="display: block;margin-left: auto;margin-right: auto;"/>');
+  setTimeout(function() {
+    
     $("#intro").slideUp(300);
     $('input').blur();
     $.get($("#posts_search").attr("action"), $("#posts_search").serialize(), null, "script");
     history.pushState(null, document.title, $("#posts_search").attr("action") + "?" + $("#posts_search").serialize());
+  }, 360);
     return false;
+
   });
   $(window).bind("popstate", function() {
     $.getScript(location.href);
