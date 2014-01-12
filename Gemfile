@@ -15,6 +15,7 @@ gem 'sass-rails'
 gem 'will_paginate'
 gem 'jquery-rails'
 gem 'jquery-modal-rails'
+gem "uglifier"
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 #gem 'turbolinks'
 
