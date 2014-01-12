@@ -2,43 +2,7 @@
 //= require jquery_ujs
 //= require jquery.modal
 //= require_tree .
-/*
 
-$(function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( "#search" ).autocomplete({
-      source: availableTags,
-        select: function(event, ui) { 
-        $("#search").val(ui.item.label);
-        $("#posts_search").submit(); }
-    });
-
-  });
-
-*/
 
 
  $(function() {
