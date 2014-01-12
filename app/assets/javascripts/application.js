@@ -3,7 +3,7 @@
 //= require jquery.modal
 //= require_tree .
 
-
+//JS
 
  $(function() {
 
